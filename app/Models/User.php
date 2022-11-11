@@ -10,6 +10,8 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    public $timestamps = false;
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -19,26 +21,32 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'password',
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
+     * Отношение один-к-одному от User к Phone.
+     * Получить телефон, связанный с пользователем.
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    public function phone()
+    {
+        return $this->hasOne(Phone::class, 'user_id');
+    }
 
     /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
+     * Отношение один-ко-многим от User к Phone через исходящие вызовы - outgoing_id.
+     * Получить исходящие вызовы, связанные с пользователем.
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function callOutgoing()
+    {
+        return $this->hasMany(Call::class, 'outgoing_id');
+    }
+
+    /**
+     * Отношение один-ко-многим от User к Call через входящие вызовы - incoming_id.
+     * Получить входящие вызовы, связанные с пользователем.
+     */
+    public function callIncoming()
+    {
+        return $this->hasMany(Call::class, 'incoming_id');
+    }
 }
