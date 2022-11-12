@@ -15,11 +15,17 @@ return new class extends Migration
     {
         Schema::create('calls', function (Blueprint $table) {
             $table->id();
+            // ID пользователя исходящего вызова
             $table->unsignedBigInteger('outgoing_id');
+            // ID пользователя входящего вызова
             $table->unsignedBigInteger('incoming_id');
+            // Дата и время начала вызова
             $table->timestamp('started_at');
+            // Дата и время завершения вызова
             $table->timestamp('finished_at');
+            // Длительность
             $table->time('duration');
+            // Стоимость
             $table->integer('cost');
         });
 

@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('operators', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            // Цена внутри сети
             $table->integer('price_within');
+            // Цена на другие сети
             $table->integer('price_another');
         });
     }

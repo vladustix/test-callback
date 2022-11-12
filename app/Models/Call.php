@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Call extends Model
 {
+    // Отключить updated_at и created_at
     public $timestamps = false;
 
     protected $fillable = [

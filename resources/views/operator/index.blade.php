@@ -3,7 +3,7 @@
 @section('title', 'Операторы')
 
 @section('content')
-    <h2 class="text-center my-4">Список операторов</h2>
+    <h2 class="text-center my-4">Операторы</h2>
     <a href="{{ route('operator.create') }}" class="btn btn-primary mb-4">Создать</a>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">

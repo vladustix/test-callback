@@ -7,9 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class OperatorRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
+     * Авторизация
      */
     public function authorize()
     {
@@ -17,9 +15,7 @@ class OperatorRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, mixed>
+     * Правила валидации
      */
     public function rules()
     {
@@ -40,9 +36,7 @@ class OperatorRequest extends FormRequest
     }
 
     /**
-     * Get the error messages for the defined validation rules.
-     *
-     * @return array
+     * Сообщения об ошибках
      */
     public function messages()
     {

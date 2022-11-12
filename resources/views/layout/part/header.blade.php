@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('index') }}">Главная</a>
+                    <a class="nav-link" href="{{ route('index') }}">Статистика</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('call.index') }}">Журнал вызовов</a>

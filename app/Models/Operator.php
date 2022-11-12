@@ -7,18 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Operator extends Model
 {
+    // Отключить updated_at и created_at
     public $timestamps = false;
-    
-    use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
+        // Цена внутри сети
         'price_within',
+        // Цена на другие сети
         'price_another',
     ];
 

@@ -7,18 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Phone extends Model
 {
+    // Отключить updated_at и created_at
     public $timestamps = false;
-    
-    use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
+        // Номер телефона
         'number',
+        // ID пользователя
         'user_id',
+        // ID оператора
         'operator_id',
     ];
 
