@@ -44,10 +44,10 @@ class IndexController extends Controller
             // Подсчет общего времени
             foreach ($all as $item) {
                 $time = $time + strtotime($item->duration) - strtotime('00:00:00');
-                // Преобразование в формат времени
-                $time = date('H:i:s', $time);
-                return view('result', compact('user', 'time'));
             }
+            // Преобразование в формат времени
+            $time = date('H:i:s', $time);
+            return view('result', compact('user', 'time'));
         }
 
         if (!empty($request->operator_id)) {

@@ -13,7 +13,7 @@ class OperatorController extends Controller
      */
     public function index()
     {
-        $operators = Operator::paginate(20);
+        $operators = Operator::orderBy('id', 'desc')->paginate(20);
         return view('operator.index', compact('operators'));
     }
 

@@ -15,7 +15,7 @@ class CallController extends Controller
      */
     public function index()
     {
-        $calls = Call::paginate(20);
+        $calls = Call::orderBy('id', 'desc')->paginate(20);
         return view('call.index', compact('calls'));
     }
 
@@ -56,18 +56,18 @@ class CallController extends Controller
             $cost = ($price_within * $minute) * 2;
         } else {
             $cost = ($price_another_out * $minute) + ($price_another_in * $minute);
-            // Добавление вызова в БД
-            Call::create([
-                'outgoing_id' => $outgoing_id,
-                'incoming_id' => $incoming_id,
-                'started_at' => $started_at,
-                'finished_at' => $finished_at,
-                'duration' => $duration,
-                'cost' => $cost,
-            ]);
-            // Редирект на страницу со списком
-            return redirect()->route('call.index');
         }
+        // Добавление вызова в БД
+        Call::create([
+            'outgoing_id' => $outgoing_id,
+            'incoming_id' => $incoming_id,
+            'started_at' => $started_at,
+            'finished_at' => $finished_at,
+            'duration' => $duration,
+            'cost' => $cost,
+        ]);
+        // Редирект на страницу со списком
+        return redirect()->route('call.index');
     }
 
     /**

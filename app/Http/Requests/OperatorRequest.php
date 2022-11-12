@@ -22,13 +22,13 @@ class OperatorRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 return [
-                    'name'          => 'required|max:255|regex:/^([\p{Cyrillic}\s]*)$/u',
+                    'name'          => 'required|max:255|regex:/^([a-zA-Z\p{Cyrillic}0-9\s]*)$/u',
                     'price_within'  => 'integer',
                     'price_another' => 'integer',
                 ];
             case 'PUT':
                 return [
-                    'name'          => 'max:255|regex:/^([\p{Cyrillic}\s]*)$/u',
+                    'name'          => 'max:255|regex:/^([a-zA-Z\p{Cyrillic}0-9\s]*)$/u',
                     'price_within'  => 'integer',
                     'price_another' => 'integer',
                 ];
@@ -42,7 +42,7 @@ class OperatorRequest extends FormRequest
     {
         return [
             'name.required'         => 'Введите название.',
-            'name.regex'            => 'Название должно содержать буквы кириллицы и пробелы.',
+            'name.regex'            => 'Название должно содержать буквы, цифры и пробелы.',
             'name.max'              => 'Превышена допустимая длина названия.',
             'price_within.integer'  => 'Цена должна содержать целое число.',
             'price_another.integer' => 'Цена должна содержать целое число.',
