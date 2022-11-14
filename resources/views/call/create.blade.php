@@ -9,7 +9,7 @@
         <div class="col-12">
             @include('layout.part.error')
         </div>
-        <div class="col-md-6">
+        <div class="col-12 col-lg-6">
             <label for="userOutgoing" class="form-label">Исходящий вызов</label>
             <select id="userOutgoing" class="form-select" name="outgoing_id">
                 <option disabled selected>Выберите...</option>
@@ -21,7 +21,7 @@
                 @endforeach
             </select>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
             <label for="userIncoming" class="form-label">Входящий вызов</label>
             <select id="userIncoming" class="form-select" name="incoming_id">
                 <option disabled selected>Выберите...</option>
@@ -33,12 +33,12 @@
                 @endforeach
             </select>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
             <label for="startedAt" class="form-label">Начало вызова</label>
             <input type="text" class="form-control" id="startedAt" name="started_at"
                 placeholder="Например: 2022-11-09 00:00:00" value="{{ old('started_at') }}">
         </div>
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
             <label for="finishedAt" class="form-label">Конец вызова</label>
             <input type="text" class="form-control" id="finishedAt" name="finished_at"
                 placeholder="Например: 2022-11-09 00:05:00" value="{{ old('finished_at') }}">
