@@ -1,4 +1,7 @@
 @csrf
+<div class="col-12">
+    @include('layout.part.error')
+</div>
 <div class="col-6">
     <label for="name" class="form-label">Имя пользователя</label>
     <input type="text" class="form-control" id="name" name="name" placeholder="Иванов Иван Иванович"
@@ -32,12 +35,3 @@
         @endif
     </button>
 </div>
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif

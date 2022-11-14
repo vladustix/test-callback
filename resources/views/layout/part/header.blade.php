@@ -20,6 +20,7 @@
                     <a class="nav-link" href="{{ route('operator.index') }}">Операторы</a>
                 </li>
             </ul>
+            <a class="btn btn-success ms-lg-3 mb-2 mb-lg-0" href="https://github.com/vladustix/test-callback"><i class="bi bi-cloud-download"></i> Скачать</a>
         </div>
     </div>
 </nav>

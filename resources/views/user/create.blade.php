@@ -3,7 +3,7 @@
 @section('title', 'Добавление пользователя')
 
 @section('content')
-    <h2 class="text-center my-4">Добавление пользователя</h2>
+    <h1 class="text-center my-5">Добавление пользователя</h1>
     <form class="row g-3" method="POST" action="{{ route('user.store') }}">
         @include('user.part.form')
     </form>

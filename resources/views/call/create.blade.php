@@ -3,9 +3,12 @@
 @section('title', 'Создание вызова')
 
 @section('content')
-    <h2 class="text-center my-4">Создание вызова</h2>
+    <h1 class="text-center my-5">Создание вызова</h1>
     <form class="row g-3" method="POST" action="{{ route('call.store') }}">
         @csrf
+        <div class="col-12">
+            @include('layout.part.error')
+        </div>
         <div class="col-md-6">
             <label for="userOutgoing" class="form-label">Исходящий вызов</label>
             <select id="userOutgoing" class="form-select" name="outgoing_id">
@@ -43,14 +46,5 @@
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Добавить</button>
         </div>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
     </form>
 @endsection

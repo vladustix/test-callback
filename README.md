@@ -3,10 +3,10 @@
 Тестовый проект для журнала вызова
 
 Версия:
-    > PHP - 8.0.2
-    > Laravel - 9.19
-    > MySQL - 8.0.30
+    PHP - 8.0.2
+    Laravel - 9.19
+    MySQL - 8.0.30
 
 ## Cсылка
 
-**[Cсылка на сайт проекта][http://vustix.lovestoblog.com]**
+**[Cсылка на сайт проекта](http://vustix.lovestoblog.com)**
